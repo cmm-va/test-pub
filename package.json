@@ -4,16 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "rimraf ./dist/test-pub/* && NODE_ENV=development node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build test-pub --configuration production",
+    "build": "ng build test-lib --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "release": "wpm release --release-branch-format release-auto-v{{version}}",
     "release-next": "wpm release --release-branch-format release-auto-next-v{{version}}",
-    "pub-only": "cd dist/test-pub && npm publish --access=public",
+    "pub-only": "cd dist/test-lib && npm publish --access=public",
     "pub": "wpm publish && npm run pub-only",
     "pub-next": "wpm publish && npm run pub-next-only",
     "pub-next-only": "npm run pub-next-test-pub-only",
-    "pub-next-test-pub-only": "cd ./dist/test-pub && npm publish --tag next"
+    "pub-next-test-pub-only": "cd ./dist/test-lib && npm publish --tag next"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +41,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^14.1.0",
     "typescript": "~4.7.2"
   }
 }
