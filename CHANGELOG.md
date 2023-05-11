@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.1](https://github.com/cmm-va/test-pub/compare/1.0.0...1.0.1) (2023-05-11)
+
+
+### Bug Fixes
+
+*  add lib ([3552d05](https://github.com/cmm-va/test-pub/commit/3552d05a6d91d44b6ad4c38bf80f9abb44f55aa0))
+* build ([85cb40c](https://github.com/cmm-va/test-pub/commit/85cb40c84626fac51a1b97fde80f4e571f4bb20b))
+
+
+
 # [1.0.0](https://github.com/cmm-va/test-pub/compare/v0.0.1...v1.0.0) (2023-05-11)
 
 
