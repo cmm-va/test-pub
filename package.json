@@ -1,5 +1,8 @@
 {
-  "name": "test-pub",
+
+
+
+  "name": "@imchenmm/test-pub",
   "version": "1.0.2",
   "scripts": {
     "ng": "ng",
