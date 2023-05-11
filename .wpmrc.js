@@ -11,6 +11,5 @@ module.exports = {
   tagPrefix: "",
   hooks: {
     prepublish: "npm run build",
-    postpublish: "npm run pub-only",
   },
 };
