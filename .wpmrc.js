@@ -3,7 +3,7 @@ module.exports = {
   bumpFiles: [
     "package.json",
     "package-lock.json",
-    "packages/test-pub/package.json",
+    "project/test-lib/package.json",
   ],
   skip: {
     confirm: true,
