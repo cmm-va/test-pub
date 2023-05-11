@@ -4,9 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release": "wpm release --release-branch-format release-auto-v{{version}}",
+    "release-next": "wpm release --release-branch-format release-auto-next-v{{version}}",
+    "pub-only": "cd dist/test-pub && npm publish --access=public",
+    "pub": "wpm publish && npm run pub-only",
+    "pub-next": "wpm publish && npm run pub-next-only",
+    "pub-next-only": "npm run pub-next-test-pub-only",
+    "pub-next-test-pub-only": "cd ./dist/test-pub && npm publish --tag next"
   },
   "private": true,
   "dependencies": {
