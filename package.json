@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "rimraf ./dist/test-pub/* && NODE_ENV=development node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build test-pub --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "release": "wpm release --release-branch-format release-auto-v{{version}}",
