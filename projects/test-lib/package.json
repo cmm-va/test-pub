@@ -1,6 +1,6 @@
 {
   "name": "@imchenmm/test-lib",
-  "version": "1.0.5",
+  "version": "1.0.6-0",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0"

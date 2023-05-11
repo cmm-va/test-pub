@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.6-0](https://github.com/cmm-va/test-pub/compare/1.0.5...1.0.6-0) (2023-05-11)
+
+
+### Bug Fixes
+
+* + version ([2a7e3fc](https://github.com/cmm-va/test-pub/commit/2a7e3fcc77d86aa24c6d5eeed3ae7bf1e254de8b))
+* projects ([09be00a](https://github.com/cmm-va/test-pub/commit/09be00ab508aeccd2cb0acc6248f75842f111720))
+* sd ([15f43e0](https://github.com/cmm-va/test-pub/commit/15f43e069a4ea9545be6d7309ec2034fca6ae9c3))
+* update version ([037ca4e](https://github.com/cmm-va/test-pub/commit/037ca4e1fd88a10837a5a41ce55137e4d945067f))
+
+
+
 ## [1.0.5](https://github.com/cmm-va/test-pub/compare/1.0.4...1.0.5) (2023-05-11)
 
 
