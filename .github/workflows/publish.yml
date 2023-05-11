@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: hmarr/auto-approve-action@v3
         with:
-          review-message: 'Auto approve sync PRs to auto merge them'
+          review-message: "Auto approve sync PRs to auto merge them"
   publish:
     if: startsWith(github.head_ref, 'release-auto-')
     needs: [autoApprove]
@@ -32,10 +32,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - name: Authenticate
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PUBLISH_PACKAGE_TOKEN }}" > ~/.npmrc
-          echo "@atinc:registry=https://npm.pkg.github.com/" >> ~/.npmrc
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -49,28 +45,26 @@ jobs:
           git config user.email github-actions@github.com 
           npm run pub
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish-next
         if: startsWith(github.head_ref, 'release-auto-next-v')
         run: |
           git config user.name github-actions
-          git config user.email github-actions@github.com 
+          git config user.email github-actions@github.com
           npm run pub-next
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Unset authenticate
-        run: rm ~/.npmrc
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Read package.json
         id: read-version
         uses: notiz-dev/github-action-json-property@release
         with:
-          path: 'package.json'
-          prop_path: 'version'
+          path: "package.json"
+          prop_path: "version"
       - name: send message to webhook
         uses: joelwmale/webhook-action@master
         with:
-          url: 'https://hook-rc.pingcode.com/api/flow/w/http/357bdd4f00f34bfab2f878ad3b9e8b48'
-          body: '{ "version": "${{ steps.read-version.outputs.prop }}", "name": "业务组件库 ngx-styx" }'
+          url: "https://hook-rc.pingcode.com/api/flow/w/http/357bdd4f00f34bfab2f878ad3b9e8b48"
+          body: '{ "version": "${{ steps.read-version.outputs.prop }}", "name": "测试 test-pub" }'
   autoMerge:
     if: startsWith(github.head_ref, 'release-auto-')
     needs: [publish]
@@ -78,10 +72,10 @@ jobs:
     steps:
       - id: autoMerge
         name: autoMerge
-        uses: 'pascalgn/automerge-action@v0.15.5'
+        uses: "pascalgn/automerge-action@v0.15.5"
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          MERGE_LABELS: ''
-          MERGE_FORKS: 'false'
-          MERGE_RETRIES: '20'
-          MERGE_RETRY_SLEEP: '60000'
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: ""
+          MERGE_FORKS: "false"
+          MERGE_RETRIES: "20"
+          MERGE_RETRY_SLEEP: "60000"
